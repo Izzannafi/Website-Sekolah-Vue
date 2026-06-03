@@ -1,0 +1,432 @@
+/* ============================================
+   MAIN STYLES — SDIT Al Ittihaad
+   ============================================ */
+
+@import './base.css';
+
+/* Google Fonts - Removed duplicate import (already in index.html) */
+
+/* ============================================
+    LAYOUT UTILITIES
+    ============================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-lg);
+  padding-right: var(--space-lg);
+}
+
+.section {
+  padding-top: var(--space-section);
+  padding-bottom: var(--space-section);
+}
+
+.section--sm {
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+}
+
+
+.section--tint {
+  background-color: var(--color-primary-tint);
+}
+
+/* ============================================
+    BUTTON SYSTEM
+    ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.75rem;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primary */
+.btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-glow);
+  color: white;
+}
+
+/* Accent */
+.btn--accent {
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  border-color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+.btn--accent:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-light);
+  box-shadow: var(--shadow-glow-accent);
+  color: var(--color-primary);
+}
+
+/* Outline */
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--outline:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Outline White */
+.btn--outline-white {
+  background-color: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn--outline-white:hover {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+/* Ghost */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-primary-tint);
+}
+
+/* Sizes */
+.btn--sm {
+  padding: 0.5rem 1.25rem;
+  font-size: var(--font-size-xs);
+}
+
+.btn--lg {
+  padding: 1rem 2.25rem;
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================
+    CARD SYSTEM
+    ============================================ */
+
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.card--elevated {
+  box-shadow: var(--shadow-md);
+  border: none;
+}
+
+.card--hoverable:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card__body {
+  padding: var(--space-lg);
+}
+
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ============================================
+    BADGE
+    ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--radius-full);
+  line-height: 1.4;
+}
+
+.badge--primary {
+  background-color: var(--color-primary-tint);
+  color: var(--color-primary);
+}
+
+.badge--accent {
+  background-color: #FEF3C7;
+  color: var(--color-accent);
+}
+
+.badge--success {
+  background-color: var(--color-success-light);
+  color: #065F46;
+}
+
+.badge--danger {
+  background-color: var(--color-danger-light);
+  color: #991B1B;
+}
+
+.badge--info {
+  background-color: var(--color-info-light);
+  color: #1E40AF;
+}
+
+/* ============================================
+    FORM ELEMENTS
+    ============================================ */
+
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  background-color: var(--color-bg-card);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(27, 77, 110, 0.1);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-input--error {
+  border-color: var(--color-danger);
+}
+
+.form-input--error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+
+/* ============================================
+    TYPOGRAPHY UTILITIES
+    ============================================ */
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-center { text-align: center; }
+.text-light { color: var(--color-text-light); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+
+/* ============================================
+    GRID UTILITIES
+    ============================================ */
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid--2 { grid-template-columns: repeat(2, 1fr); }
+.grid--3 { grid-template-columns: repeat(3, 1fr); }
+.grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ============================================
+    ANIMATION UTILITIES
+    ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* Stagger delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+
+/* ============================================
+    PAGE TRANSITION
+    ============================================ */
+
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* ============================================
+    RESPONSIVE
+    ============================================ */
+
+@media (max-width: 1024px) {
+  :root {
+    --font-size-hero: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-3xl: 1.75rem;
+  }
+
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-hero: 2rem;
+    --font-size-4xl: 1.75rem;
+    --font-size-3xl: 1.5rem;
+    --space-section: 3rem;
+  }
+
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .grid--4,
+  .grid--3,
+  .grid--2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hide-mobile { display: none !important; }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-hero: 1.75rem;
+    --font-size-4xl: 1.5rem;
+  }
+}
+
+/* ============================================
+    SCROLLBAR (OPTIONAL POLISH)
+    ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-light);
+}
